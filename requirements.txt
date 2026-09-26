@@ -19,3 +19,5 @@ uvicorn
 jinja2
 xgboost
 imblearn
+dotenv
+pymongo[srv]==3.12
