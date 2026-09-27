@@ -3,3 +3,5 @@ venv
 .env
 *.egg-info/
 *__pycache__*
+logs/
+.log
