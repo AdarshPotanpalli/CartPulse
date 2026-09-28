@@ -1,0 +1,24 @@
+columns:
+  - ProductID: int
+  - ProductCategory: category
+  - ProductBrand: category
+  - ProductPrice: float
+  - CustomerAge: int
+  - CustomerGender: int
+  - PurchaseFrequency: int
+  - CustomerSatisfaction: int
+  - PurchaseIntent: int
+
+
+numerical_columns:
+  - ProductID
+  - ProductPrice
+  - CustomerAge
+  - CustomerGender
+  - PurchaseFrequency
+  - CustomerSatisfaction
+  - PurchaseIntent
+
+categorical_columns:
+  - ProductCategory
+  - ProductBrand
