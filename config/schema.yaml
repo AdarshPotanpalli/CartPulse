@@ -22,3 +22,12 @@ numerical_columns:
 categorical_columns:
   - ProductCategory
   - ProductBrand
+
+drop_columns: ProductID
+
+# for data transformation: scaling
+num_features:
+  - ProductPrice
+  - CustomerAge
+  - PurchaseFrequency
+  - CustomerSatisfaction
