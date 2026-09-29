@@ -57,3 +57,24 @@ def save_object(file_path: str, obj: object) -> None:
 
     except Exception as e:
         logger.error(CustomException(e, sys))
+        
+def load_numpy_array_data(file_path: str) -> np.array:
+    """
+    load numpy array data from file
+    """
+    try:
+        with open(file_path, 'rb') as file_obj:
+            return np.load(file_obj)
+    except Exception as e:
+        logger.error(CustomException(e, sys))
+        
+def load_object(file_path: str) -> object:
+    """
+    Returns model/object from project directory.
+    """
+    try:
+        with open(file_path, "rb") as file_obj:
+            obj = dill.load(file_obj) # used to load binaries like .pkl file
+        return obj
+    except Exception as e:
+        logger.error(CustomException(e, sys))

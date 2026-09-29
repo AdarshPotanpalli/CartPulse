@@ -141,9 +141,9 @@ class DataTransformation:
             logger.info("Got the preprocessor object")
 
             logger.info("Initializing transformation for Training-data")
-            input_feature_train_arr = preprocessor.fit_transform(input_feature_train_df)
+            input_feature_train_arr = preprocessor.fit_transform(input_feature_train_df) # learn and apply transformation
             logger.info("Initializing transformation for Testing-data")
-            input_feature_test_arr = preprocessor.transform(input_feature_test_df)
+            input_feature_test_arr = preprocessor.transform(input_feature_test_df) # only apply transformation
             logger.info("Transformation done end to end to train-test df.")
 
             # creates synthetic samples for minority class
