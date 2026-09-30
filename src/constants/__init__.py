@@ -23,6 +23,9 @@ TRAIN_FILE_NAME: str = "train.csv"
 TEST_FILE_NAME: str = "test.csv"
 SCHEMA_FILE_PATH = os.path.join("config", "schema.yaml")
 
+AWS_ACCESS_KEY_ID_ENV_KEY = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY_ENV_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+REGION_NAME = os.getenv("AWS_REGION")
 
 """
 Data Ingestion related constant start with DATA_INGESTION VAR NAME
@@ -65,3 +68,10 @@ MODEL_TRAINER_COLSAMPLE_BYTREE: float = 0.8
 MODEL_TRAINER_MIN_CHILD_WEIGHT: int = 1
 MODEL_TRAINER_GAMMA: float = 0.0
 MODEL_TRAINER_RANDOM_STATE: int = 101
+
+
+"""
+MODEL Evaluation related constants
+"""
+MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
+MODEL_BUCKET_NAME = os.getenv("MODEL_BUCKET_NAME")
