@@ -1,0 +1,256 @@
+body {
+background: #f4f6f9;
+color: #212529;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+Dashboard Header
+========================================================= */
+
+.dashboard-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+}
+
+.dashboard-header h1 {
+letter-spacing: -0.5px;
+}
+
+.status-badge {
+background: #ffffff;
+border: 1px solid #dee2e6;
+border-radius: 50px;
+padding: 8px 16px;
+font-size: 14px;
+color: #495057;
+white-space: nowrap;
+}
+
+.status-dot {
+display: inline-block;
+width: 8px;
+height: 8px;
+background: #198754;
+border-radius: 50%;
+margin-right: 7px;
+}
+
+/* =========================================================
+Dashboard Cards
+========================================================= */
+
+.dashboard-card {
+background: #ffffff;
+border: 1px solid #e5e7eb;
+border-radius: 16px;
+padding: 28px;
+box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.card-header-custom {
+margin-bottom: 28px;
+}
+
+.card-header-custom h3 {
+font-size: 21px;
+font-weight: 600;
+margin-bottom: 6px;
+}
+
+.card-header-custom p {
+color: #6c757d;
+margin-bottom: 0;
+font-size: 14px;
+}
+
+/* =========================================================
+Section Titles
+========================================================= */
+
+.section-title {
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 16px;
+font-weight: 600;
+margin-bottom: 18px;
+color: #343a40;
+}
+
+.section-title span {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 30px;
+height: 30px;
+border-radius: 8px;
+background: #e9f0ff;
+color: #0d6efd;
+font-size: 13px;
+font-weight: 700;
+}
+
+/* =========================================================
+Form Elements
+========================================================= */
+
+.form-label {
+font-weight: 600;
+font-size: 14px;
+margin-bottom: 7px;
+}
+
+.form-control,
+.form-select {
+min-height: 46px;
+border-radius: 9px;
+border: 1px solid #ced4da;
+}
+
+.form-control:focus,
+.form-select:focus {
+border-color: #86b7fe;
+box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.1);
+}
+
+.input-group-text {
+background: #f8f9fa;
+}
+
+.form-text {
+font-size: 12px;
+color: #868e96;
+}
+
+/* =========================================================
+Buttons
+========================================================= */
+
+.btn {
+border-radius: 9px;
+font-weight: 600;
+}
+
+.prediction-action .btn {
+min-height: 52px;
+}
+
+/* =========================================================
+Prediction Result
+========================================================= */
+
+.prediction-result {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Yes prediction */
+.prediction-yes {
+    background-color: #e8f7ee;
+    color: #198754;
+}
+
+.prediction-yes .result-icon {
+    background-color: #198754;
+    color: white;
+}
+
+/* No prediction */
+.prediction-no {
+    background-color: #fdecec;
+    color: #dc3545;
+}
+
+.prediction-no .result-icon {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Result icon */
+.result-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+Empty Prediction
+========================================================= */
+
+.empty-result {
+text-align: center;
+padding: 25px 10px;
+color: #6c757d;
+}
+
+.empty-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 50px;
+height: 50px;
+margin: 0 auto 15px;
+border-radius: 50%;
+background: #f1f3f5;
+font-size: 22px;
+font-weight: bold;
+}
+
+/* =========================================================
+Training Status
+========================================================= */
+
+.training-status {
+padding: 15px;
+background: #f8f9fa;
+border: 1px solid #dee2e6;
+border-radius: 10px;
+font-size: 14px;
+color: #495057;
+}
+
+/* =========================================================
+Footer
+========================================================= */
+
+.dashboard-footer {
+text-align: center;
+color: #868e96;
+font-size: 13px;
+}
+
+/* =========================================================
+Responsive Design
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+.dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dashboard-card {
+    padding: 20px;
+}
+
+.status-badge {
+    font-size: 13px;
+}
+
+
+}

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>CartPulse | Purchase Intent Dashboard</title>
+
+<!-- Bootstrap -->
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/static/css/style.css">
+
+
+</head>
+
+<body>
+
+<div class="container py-5">
+
+
+<!-- ===================================================== -->
+<!-- Dashboard Header -->
+<!-- ===================================================== -->
+<div class="dashboard-header mb-4">
+    <div>
+        <h1 class="fw-bold mb-1">CartPulse</h1>
+        <p class="text-muted mb-0">
+            Purchase Intent Prediction Dashboard
+        </p>
+    </div>
+
+    <div class="status-badge">
+        <span class="status-dot"></span>
+        ML Prediction System
+    </div>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- Main Dashboard -->
+<!-- ===================================================== -->
+<div class="row g-4">
+
+    <!-- ================================================= -->
+    <!-- Prediction Input -->
+    <!-- ================================================= -->
+    <div class="col-lg-8">
+
+        <div class="dashboard-card">
+
+            <div class="card-header-custom">
+                <h3>Purchase Intent Prediction</h3>
+                <p>
+                    Enter product and customer information to generate
+                    a purchase-intent prediction.
+                </p>
+            </div>
+
+
+            <form method="post" action="/">
+
+                <!-- ===================================== -->
+                <!-- Product Information -->
+                <!-- ===================================== -->
+                <div class="section-title">
+                    <span>01</span>
+                    Product Information
+                </div>
+
+                <div class="row g-3">
+
+                    <!-- Product Category -->
+                    <div class="col-md-6">
+                        <label for="ProductCategory" class="form-label">
+                            Product Category
+                        </label>
+
+                        <select
+                            id="ProductCategory"
+                            name="ProductCategory"
+                            class="form-select"
+                            required
+                        >
+                            <option value="" disabled selected>
+                                Select category
+                            </option>
+
+                            <option value="Smartphones">
+                                Smartphones
+                            </option>
+
+                            <option value="Smart Watches">
+                                Smart Watches
+                            </option>
+
+                            <option value="Tablets">
+                                Tablets
+                            </option>
+
+                            <option value="Laptops">
+                                Laptops
+                            </option>
+
+                            <option value="Headphones">
+                                Headphones
+                            </option>
+                        </select>
+                    </div>
+
+
+                    <!-- Product Brand -->
+                    <div class="col-md-6">
+                        <label for="ProductBrand" class="form-label">
+                            Product Brand
+                        </label>
+
+                        <select
+                            id="ProductBrand"
+                            name="ProductBrand"
+                            class="form-select"
+                            required
+                        >
+                            <option value="" disabled selected>
+                                Select brand
+                            </option>
+
+                            <option value="Other Brands">
+                                Other Brands
+                            </option>
+
+                            <option value="Samsung">
+                                Samsung
+                            </option>
+
+                            <option value="Sony">
+                                Sony
+                            </option>
+
+                            <option value="HP">
+                                HP
+                            </option>
+
+                            <option value="Apple">
+                                Apple
+                            </option>
+                        </select>
+                    </div>
+
+
+                    <!-- Product Price -->
+                    <div class="col-md-6">
+                        <label for="ProductPrice" class="form-label">
+                            Product Price
+                        </label>
+
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+
+                            <input
+                                type="number"
+                                step="0.01"
+                                id="ProductPrice"
+                                name="ProductPrice"
+                                class="form-control"
+                                min="100"
+                                max="3000"
+                                placeholder="100 – 3000"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-text">
+                            Range: $100 – $3,000
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- ===================================== -->
+                <!-- Customer Information -->
+                <!-- ===================================== -->
+                <div class="section-title mt-5">
+                    <span>02</span>
+                    Customer Information
+                </div>
+
+                <div class="row g-3">
+
+                    <!-- Customer Age -->
+                    <div class="col-md-6">
+                        <label for="CustomerAge" class="form-label">
+                            Customer Age
+                        </label>
+
+                        <input
+                            type="number"
+                            id="CustomerAge"
+                            name="CustomerAge"
+                            class="form-control"
+                            min="18"
+                            max="70"
+                            placeholder="18 – 70"
+                            required
+                        >
+
+                        <div class="form-text">
+                            Range: 18 – 70 years
+                        </div>
+                    </div>
+
+
+                    <!-- Customer Gender -->
+                    <div class="col-md-6">
+                        <label for="CustomerGender" class="form-label">
+                            Customer Gender
+                        </label>
+
+                        <select
+                            id="CustomerGender"
+                            name="CustomerGender"
+                            class="form-select"
+                            required
+                        >
+                            <option value="" disabled selected>
+                                Select gender
+                            </option>
+
+                            <option value="0">
+                                Male
+                            </option>
+
+                            <option value="1">
+                                Female
+                            </option>
+                        </select>
+
+                        <div class="form-text">
+                            Male = 0 &nbsp;|&nbsp; Female = 1
+                        </div>
+                    </div>
+
+
+                    <!-- Purchase Frequency -->
+                    <div class="col-md-6">
+                        <label for="PurchaseFrequency" class="form-label">
+                            Purchase Frequency
+                        </label>
+
+                        <input
+                            type="number"
+                            id="PurchaseFrequency"
+                            name="PurchaseFrequency"
+                            class="form-control"
+                            min="1"
+                            max="20"
+                            placeholder="1 – 20"
+                            required
+                        >
+
+                        <div class="form-text">
+                            Range: 1 – 20 purchases
+                        </div>
+                    </div>
+
+
+                    <!-- Customer Satisfaction -->
+                    <div class="col-md-6">
+                        <label for="CustomerSatisfaction" class="form-label">
+                            Customer Satisfaction
+                        </label>
+
+                        <select
+                            id="CustomerSatisfaction"
+                            name="CustomerSatisfaction"
+                            class="form-select"
+                            required
+                        >
+                            <option value="" disabled selected>
+                                Select satisfaction level
+                            </option>
+
+                            <option value="1">
+                                1 — Very Dissatisfied
+                            </option>
+
+                            <option value="2">
+                                2 — Dissatisfied
+                            </option>
+
+                            <option value="3">
+                                3 — Neutral
+                            </option>
+
+                            <option value="4">
+                                4 — Satisfied
+                            </option>
+
+                            <option value="5">
+                                5 — Very Satisfied
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- ===================================== -->
+                <!-- Prediction Button -->
+                <!-- ===================================== -->
+                <div class="prediction-action mt-5">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-lg w-100"
+                    >
+                        Predict Purchase Intent
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- Right Dashboard Panel -->
+    <!-- ================================================= -->
+    <div class="col-lg-4">
+
+
+        <!-- ============================================= -->
+        <!-- Predicted Intent -->
+        <!-- ============================================= -->
+        <div class="dashboard-card result-card mb-4">
+
+            <div class="card-header-custom">
+                <h3>Predicted Intent</h3>
+                <p>
+                    The model prediction will appear here.
+                </p>
+            </div>
+
+            {% if context %}
+
+                {% if context|lower == "yes" %}
+
+                    <div class="prediction-result prediction-yes">
+                        <div class="result-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <div class="result-label">
+                                Model Output
+                            </div>
+
+                            <h4 class="mb-0">
+                                {{ context }}
+                            </h4>
+                        </div>
+                    </div>
+
+                {% else %}
+
+                    <div class="prediction-result prediction-no">
+                        <div class="result-icon">
+                            ✕
+                        </div>
+
+                        <div>
+                            <div class="result-label">
+                                Model Output
+                            </div>
+
+                            <h4 class="mb-0">
+                                {{ context }}
+                            </h4>
+                        </div>
+                    </div>
+
+                {% endif %}
+
+            {% else %}
+
+                <div class="empty-result">
+                    <div class="empty-icon">
+                        ?
+                    </div>
+
+                    <p class="mb-0">
+                        No prediction generated yet.
+                    </p>
+                </div>
+
+            {% endif %}
+
+        </div>
+
+
+
+
+        <!-- ============================================= -->
+        <!-- Training -->
+        <!-- ============================================= -->
+        <div class="dashboard-card">
+
+            <div class="card-header-custom">
+                <h3>Model Training</h3>
+                <p>
+                    Retrain the purchase-intent model using the
+                    configured training pipeline.
+                </p>
+            </div>
+
+            <form method="get" action="/train">
+
+                <button
+                    type="submit"
+                    class="btn btn-outline-primary btn-lg w-100"
+                >
+                    Train Model
+                </button>
+
+            </form>
+
+
+            {% if training_status %}
+
+                <div class="training-status mt-3">
+                    <strong>Training Status</strong>
+
+                    <div class="mt-1">
+                        {{ training_status }}
+                    </div>
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- Footer -->
+<!-- ===================================================== -->
+<div class="dashboard-footer mt-5">
+    <p class="mb-0">
+        CartPulse &copy; 2026
+    </p>
+</div>
+
+
+</div>
+
+<!-- Bootstrap JavaScript -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
